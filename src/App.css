@@ -6,6 +6,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+.App-particles__container {
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 0;
+}
+.App-particles__container canvas {
+  transition: 0.2s all ease-in-out;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

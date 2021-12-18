@@ -14,7 +14,7 @@ function Searchbar() {
         {
           headers: {
             Keyword: Keyword,
-            Origin: "application/json",
+            Origin: "https://colleges-india.herokuapp.com",
           },
         }
       )
@@ -69,11 +69,11 @@ function Searchbar() {
   };
 
   return (
-    <div className='bg-white'>
+    <div className='bg-gray-100' style={{width:"fit-content",margin:"auto",background: "radial-gradient(#bb6b6b, transparent)"}}>
       <div
         className='flex justify-center -mt-20 bg-white w-4/6 m-auto  
       '>
-        <div className='flex-row bg-white p-2 font-bold'>
+        <div className='flex-row bg-white p-2 font-bold hover:bg-gray-50 ease-linear duration-100 '>
           <p>State</p>
           <input
             type='text'
@@ -82,7 +82,8 @@ function Searchbar() {
             onChange={(e) => setKeyword(e.target.value)}
           />
         </div>{" "}
-        <div className='bg-black rounded-xl p-2 flex justify-center'>
+        <div className='flex-row bg-white p-2 font-bold'>
+        <div className='bg-black rounded p-2 flex justify-center'>
           {" "}
           <button
             onClick={() => {
@@ -90,7 +91,7 @@ function Searchbar() {
             }}>
             <SearchIcon className='text-white' />
           </button>{" "}
-        </div>{" "}
+        </div>{" "}</div>
         <div className='flex-row font-bold bg-white p-2'>
           <p>District</p>
           <input
@@ -100,7 +101,8 @@ function Searchbar() {
             onChange={(e) => setKeyword(e.target.value)}
           />
         </div>{" "}
-        <div className='bg-black rounded-xl p-2 flex justify-center'>
+        <div className='flex-row bg-white p-2 font-bold'>
+        <div className='bg-black rounded p-2 flex justify-center'>
           {" "}
           <button
             onClick={() => {
@@ -108,7 +110,7 @@ function Searchbar() {
             }}>
             <SearchIcon className='text-white' />
           </button>{" "}
-        </div>{" "}
+        </div>{" "}</div>
         <div className='flex-row bg-white p-2 font-bold'>
           <p>Keyword</p>
           <input
@@ -119,7 +121,7 @@ function Searchbar() {
           />
         </div>{" "}
         <div className='flex-row bg-white p-2 font-bold'>
-          <div className='bg-black rounded-xl p-2'>
+          <div className='bg-black rounded p-2'>
             {" "}
             <button
               onClick={() => {
@@ -130,15 +132,17 @@ function Searchbar() {
           </div>
         </div>
       </div>
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap' style={{width:"70vw",margin:"auto"}}>
         {fetchKeyword?.map((item, index) => {
           return (
             <div key={index} className='flex-col flex-wrap mt-10'>
+              
               <div
-                className='bg-black text-white p-4 m-1 shadow-2xl  text-center'
-                style={{ width: "fit-content" }}>
+                className='bg-black text-green-200 p-4 m-1 shadow hover:shadow-2xl ease-linear duration-200  text-center'
+                style={{ width: "20vw" }}>
+                  <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=886&q=80" alt="" className="w-full m-auto p-0"/>
                 <p>{item[0]}</p>{" "}
-                <p className='font-bold text-green-400'>{item[1]}</p>{" "}
+                <p className='font-bold text-white'>{item[1]}</p>{" "}
                 <p>{item[2]}</p> <p>{item[3]}</p> <p>{item[4]}</p>
                 <p>{item[5]}</p>
               </div>

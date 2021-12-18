@@ -5,15 +5,19 @@ import Banner from "./components/banner";
 import Header from "./components/header";
 import Searchbar from "./components/searchbar";
 
-
 function App() {
   return (
-    <div className="">
+    <div className="relative">
+      {/* <Particle params={particlesConfig} className="App-particles__container" /> */}
 
-
-<Header/>
-<Banner/>
-<Searchbar/>
+      <div
+        className='h-full'
+        style={{ minHeight: "100vh",  backgroundColor:"black",borderBottomRightRadius:"75%"}}>
+       
+        <Header />
+        <Banner />
+        <Searchbar />
+      </div>
     </div>
   );
 }
